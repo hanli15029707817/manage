@@ -1,40 +1,21 @@
 <template>
   <div id="app">
-    <Login @fun="changeUser_info" v-if="!user_info"/>
-    <el-container v-else>
-      <el-header><headers @fun="changeUser_info"/></el-header>
-      <div class="mt60" style="height: 100%;">
-        <el-container>
-          <menus/>
-          <el-main><router-view/></el-main>
-        </el-container>
-      </div>
-      <el-footer>Footer</el-footer>
-    </el-container>
+    <router-view replace/>
   </div>
 </template>
 
 <script>
-  import Login from './components/pages/login'
-  import menus from './components/menus'
-  import headers from './components/headers'
 export default {
   name: 'App',
   data(){
     return{
-      user_info:sessionStorage.getItem('user_info')? true : false,
+
     }
-  },
-  components: {
-    menus,headers,Login
   },
   mounted(){
-    console.log('user_info',this.user_info)
   },
   methods:{
-    changeUser_info(data){
-      this.user_info=data;
-    }
+
   },
 }
 </script>

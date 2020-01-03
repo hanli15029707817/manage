@@ -13,7 +13,8 @@
       methods:{
         loginOut(){
           sessionStorage.removeItem('user_info')
-          this.$emit('fun',false)
+          // this.$emit('fun',false)
+          // window.history.go(-1)
           this.$router.push({path:'/Login'})
         }
       }

@@ -3,7 +3,7 @@ import { Message } from 'element-ui';
 //创建axios的一个实例
 var instance=axios.create({
   baseURL:'http://sapi.shoppingyizhan.com',
-  timeout:6000,
+  // timeout:6000,//请求6000之后 没有返回数据 则自动停止访问
 })
 //-------请求的拦截器
 instance.interceptors.request.use(function(config){
