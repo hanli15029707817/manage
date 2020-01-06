@@ -10,3 +10,10 @@
 .flex-dc{
   flex-direction: column;
 }
+.main{
+  width:100%;
+  /*height:100%;*/
+  overflow: scroll;
+  margin-bottom: 130px;
+  padding:20px;
+}

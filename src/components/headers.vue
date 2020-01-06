@@ -10,13 +10,23 @@
 <script>
     export default {
         name: "headers",
+      data(){
+          return{
+            a:null
+          }
+      },
+      mounted(){
+        // this.$store.commit('SET_ManagerInfo', '123456789');
+      },
+      created(){
+        // this.a=this.$store.state.managerInfo;
+        console.log(44444,this);
+      },
       methods:{
         loginOut(){
           sessionStorage.removeItem('user_info')
-          // this.$emit('fun',false)
-          // window.history.go(-1)
           this.$router.push({path:'/Login'})
-        }
+        },
       }
     }
 </script>
