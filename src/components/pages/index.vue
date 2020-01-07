@@ -1,10 +1,16 @@
 <template>
-    <div>首页</div>
+    <div class="index">首页</div>
 </template>
 
 <script>
     export default {
-        name: "index"
+      name: "index",
+      mounted(){
+
+      },
+      methods:{
+
+      },
     }
 </script>
 

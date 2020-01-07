@@ -4,6 +4,7 @@ import Default from '../components/pages/default'
 import Index from '../components/pages/index'
 import ForegroundClassification from '../components/pages/ForegroundClassification'
 import Account from '../components/pages/account'
+import Print from '../components/pages/print'
 export default [
   {
     path: '/', name: 'Default',
@@ -37,6 +38,10 @@ export default [
           requireAuth: true, // 判断是否需要登录
         },
         component: Account
+      },
+      {
+        path: '/Print', name: 'Print',
+        component: Print
       }
     ]
   },
