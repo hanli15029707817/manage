@@ -1,5 +1,5 @@
 <template>
-      <el-aside width="200px">
+      <el-aside class="scroll" width="200px">
         <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
@@ -16,7 +16,8 @@
               style="padding-left: 14px;"
             >
               <template slot="title">
-                <i :class="item.icon"></i>
+                <!--<i :class="item.icon"></i>-->
+                <i class="el-icon-user"></i>
                 <span>{{item.name}}</span>
               </template>
             </el-menu-item>
@@ -26,7 +27,8 @@
               :index="item.index"
             >
               <template slot="title">
-                <i :class="item.icon"></i>
+                <!--<i :class="item.icon"></i>-->
+                <i class="el-icon-user"></i>
                 <span>{{item.name}}</span>
               </template>
               <template v-for="child in item.children">
@@ -110,8 +112,12 @@
 
           // this.tips = "暂无菜单...";
           this.getActive(this.$route.path, this.menulist);
+          this.handleRefreshMenu(this.$route.path)
           this.getOpends();
 
+        },
+        handleRefreshMenu(path){
+          this.$emit('handleRefreshMenu',path,this.menulist)
         },
         renderItem(item, arr) {
           let obj = {
@@ -139,6 +145,7 @@
           return obj;
         },
         getActive(path, list) {
+
           list.forEach((x, i) => {
             if (x.isLeaf) {
               if (x.url == path) {
@@ -160,6 +167,8 @@
           });
         },
         handleSelect(index, path) {
+
+          this.$emit('handleMenuSelect',index,this.menulist)
           this.getActiveforIndex(index, this.menulist);
         },
         getActiveforIndex(index, list) {
@@ -178,5 +187,46 @@
 </script>
 
 <style scoped>
+  .el-menu::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+  }
+  .el-menu::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius   : 10px;
+    background-color: skyblue;
+    background-image: -webkit-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+    );
+  }
+  .el-menu::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #ededed;
+    border-radius: 10px;
+  }
+  .el-submenu .el-menu-item{
+    height:40px;
+    line-height:40px;
+    padding: 0 45px;
+    min-width:150px;
+  }
+  .el-menu-item:focus, .el-menu-item:hover{
+    background:#fff!important;
 
+    color:#000;
+  }
+  .el-submenu__title:hover{
+    background:#fff!important;
+
+    color:#000;
+  }
 </style>

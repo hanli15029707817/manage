@@ -37,6 +37,9 @@ export default {
   height:100%;
   overflow: hidden;
 }
+  .el-main{
+    overflow: inherit!important;
+  }
 .mt60{
   margin-top: 60px;
 }
@@ -52,11 +55,21 @@ export default {
   .el-menu-item,.el-submenu__title{
     color:#fff;
   }
+  .el-menu-item,.el-submenu__title{
+    height: 40px!important;
+    line-height:40px!important;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    white-space: nowrap;
+    list-style: none;
+  }
   .el-submenu__title i{
     color:#fff;
   }
   .el-menu-item.is-active{
-    color:red;
+    color:#000;
+    background: #fff;
+    border-left:3px solid red;
   }
   .el-menu-vertical-demo{
     width: 100%;
