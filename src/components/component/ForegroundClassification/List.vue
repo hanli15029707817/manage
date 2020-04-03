@@ -49,6 +49,7 @@
         </template>
       </el-table-column>
     </el-table>
+
     <el-pagination
       class="s-pagination"
       background
@@ -58,10 +59,10 @@
       :total="pages.totalElements"
       @current-change="handleChange">
     </el-pagination>
-
     <div id="capture" v-if="goodsqrCodeUrl">
       <img :src="goodsqrCodeUrl"/>
     </div>
+
   </div>
 </template>
 

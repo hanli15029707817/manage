@@ -26,7 +26,7 @@ export default {
     padding: 0;
   }
   body,html,.el-container{
-    height:100%;
+    /*height:100%;*/
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -34,8 +34,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow:hidden;
   height:100%;
-  overflow: hidden;
 }
   .el-main{
     overflow: inherit!important;
@@ -48,6 +48,7 @@ export default {
     position: fixed;
     top:0;
     width: 100%;
+    z-index:20;
   }
   .el-aside{
     overflow: inherit;
@@ -88,6 +89,7 @@ export default {
     position: fixed;
     bottom:0;
     width:100%;
+    z-index: 20;
   }
   .el-main{
     height:100%;
